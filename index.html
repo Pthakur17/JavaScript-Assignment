@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="JavaScript Assignment">
+    <meta name="author" content="Priyanka Thakur">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+  <body>     
+    <div class='container'style='margin: 2em;'>
+        <div id='addbutton' style='margin: 2em;'>
+            <button type="button" id="addemp" onclick="addEmployee()" class="btn btn-primary" >Add Employee</button>
+        </div>
+        <section id='formsection' style='margin: 2em; display: none;'>
+            <h2>Fill your details below: </h2>
+            <form id="detailsform" class="col-sm-6" onsubmit="event.preventDefault();onFormSubmit();">  
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name">
+                  <label id="nameValidate" style="display:none; color: red;">This field is required.</label>
+                </div> 
+                <div class="form-group">
+                  <label for="address">Address:</label>
+                  <textarea class="form-control" rows="4" id="address" placeholder="Enter Address" name="address"></textarea>
+                  <label  id="addressValidate" style="display:none; color: red;">This field is required.</label>
+                </div>
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <select class="form-control" id="country" name="country">
+                        <option value="">Select Country</option>
+                        <option value="India">India</option>
+                        <option value="US">US</option>
+                        <option value="Canada">Canada</option>
+                    </select>
+                    <label id="countryValidate" style="display:none; color: red;">This field is required.</label>
+                </div>
+                <div class="form-group">
+                    <label for="contactNumber">Contact Number:</label>
+                    <input type="text" class="form-control" id="contactNumber" placeholder="Enter Contact Number" name="contactNumber">
+                    <label id="conNumberValidate" style="display:none; color: red;">This field is required and should be a 10 digit number.</label>
+                </div>
+                <div class="form-action-buttons">
+                  <input type="submit" id="submit" value="Submit">
+                  <input type="submit" id="update" value="Update" style="display: none;">
+                </div>
+            </form>
+        </section>
+        <section style='margin: 2em;'>
+            <h2> See the added recod below </h2>
+            <div id="smsg" style="background-color: aquamarine;"></div>
+            <table id='myTable' class="table table-striped" width='100%'>
+                <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Address</th>
+                      <th>Country</th>
+                      <th>Contact Number</th>
+                      <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+    </div>
+  </body>
+</html>
+
+<script src="./javaScript/main.js">
+</script>
